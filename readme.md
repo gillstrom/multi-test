@@ -40,12 +40,12 @@ Type: `Any type`
 
 Value to test.
 
-#### types
+#### values
 
 *Required*  
 Type: `array`
 
-Types to check against.
+Values to check against.
 
 
 ## License
