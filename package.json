@@ -1,0 +1,32 @@
+{
+  "name": "multi-test",
+  "version": "0.0.0",
+  "description": "Test if something is equal to any of the given values.",
+  "license": "MIT",
+  "repository": "gillstrom/multi-test",
+  "author": {
+    "email": "andreasgillstrom@gmail.com",
+    "name": "Andreas Gillström",
+    "url": "github.com/gillstrom"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "check",
+    "multi",
+    "multiple",
+    "value",
+    "values",
+    "test"
+  ],
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
