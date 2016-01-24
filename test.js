@@ -1,25 +1,18 @@
-'use strict';
-var assert = require('assert');
-var multiTest = require('./');
+import test from 'ava';
+import m from './';
 
-it('Should return true', function () {
-	assert.strictEqual(multiTest(65, [1, 5, 7, 65, 100]), true);
-	assert.strictEqual(multiTest('foo', ['bar', 'foo', 'horse']), true);
-	assert.strictEqual(multiTest(['foo', 'bar'], [['hello', 'there'], ['foo', 'bar']]), true);
-	assert.strictEqual(multiTest({foo: 'bar', tex: 'mex'}, [{numbers: 123, horse: 'race'}, {foo: 'bar', tex: 'mex'}]), true);
+test('Should return true', t => {
+	t.true(m(65, [1, 5, 7, 65, 100]));
+	t.true(m('foo', ['bar', 'foo', 'horse']));
+	t.true(m(['foo', 'bar'], [['hello', 'there'], ['foo', 'bar']]));
+	t.true(m({foo: 'bar', tex: 'mex'}, [{numbers: 123, horse: 'race'}, {foo: 'bar', tex: 'mex'}]));
 });
 
-it('Should return false', function () {
-	assert.strictEqual(multiTest(65, [1, 5, 7, 66, 100]), false);
-	assert.strictEqual(multiTest('foo', ['bar', 'f00', 'horse']), false);
-	assert.strictEqual(multiTest(['foo', 'bar'], [['hello', 'there'], ['dog', 'tooth']]), false);
-	assert.strictEqual(multiTest({foo: 'bar', tex: 'mex'}, [{numbers: 123, horse: 'race'}, {hello: 'everyone', tex: 'mex'}]), false);
+test('Should return false', t => {
+	t.false(m(65, [1, 5, 7, 66, 100]));
+	t.false(m('foo', ['bar', 'f00', 'horse']));
+	t.false(m(['foo', 'bar'], [['hello', 'there'], ['dog', 'tooth']]));
+	t.false(m({foo: 'bar', tex: 'mex'}, [{numbers: 123, horse: 'race'}, {hello: 'everyone', tex: 'mex'}]));
 });
 
-it('Should throw', function () {
-	['hi', function () {}, {}].forEach(function (input) {
-		assert.throws(function () {
-			multiTest('hi', input);
-		});
-	});
-});
+test('Should throw', t => t.throws(() => m('hi', 123)));
