@@ -1,6 +1,6 @@
 {
   "name": "multi-test",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Test if something is equal to any of the given values.",
   "license": "MIT",
   "repository": "gillstrom/multi-test",
