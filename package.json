@@ -26,6 +26,9 @@
     "values",
     "test"
   ],
+  "dependencies": {
+    "only-shallow": "^1.2.0"
+  },
   "devDependencies": {
     "ava": "*",
     "xo": "*"
